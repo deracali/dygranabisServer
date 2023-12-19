@@ -27,12 +27,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-let corsOptions = {
-    origin: ["admin.dygranabis.com","dygranabis.com"],
-    optionsSuccessStatus: 200 // For legacy browser support
-    }
-    
-    app.use(cors(corsOptions)); 
+app.use(cors())
 
 app.use((err, req, res, next) => {
     res.status(500).send({message:err.message})
