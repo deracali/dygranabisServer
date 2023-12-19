@@ -20,10 +20,6 @@ mongoose.connect("mongodb+srv://chideracalistus:economic00@cluster0.aryyobw.mong
     console.log(err.message)
 })
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
   
 
 const app = express()
@@ -31,7 +27,12 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use(cors());
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+
+  app.use(cors());
 
 app.use((err, req, res, next) => {
     res.status(500).send({message:err.message})
