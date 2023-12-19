@@ -3,14 +3,9 @@ import mongoose from 'mongoose'
 const BlogSchema = new mongoose.Schema({
 
     image: {
-        type:String, 
-    
-        
-       
+        type:String,        
     },
-    slug: {
-        type:String, 
-    },
+
     posterName: {
         type:String, 
     
