@@ -10,7 +10,6 @@ const BlogSchema = new mongoose.Schema({
     },
     slug: {
         type:String, 
-       unique:true
     },
     posterName: {
         type:String, 
