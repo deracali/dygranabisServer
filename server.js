@@ -27,7 +27,11 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use(cors())
+app.use(
+    cors({
+     origin: "https://admin.dygranabis.com/",
+    })
+   );
 
 app.use((err, req, res, next) => {
     res.status(500).send({message:err.message})
