@@ -27,12 +27,12 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
-
-  app.use(cors());
+let corsOptions = {
+    origin: ["admin.dygranabis.com","dygranabis.com"],
+    optionsSuccessStatus: 200 // For legacy browser support
+    }
+    
+    app.use(cors(corsOptions)); 
 
 app.use((err, req, res, next) => {
     res.status(500).send({message:err.message})
