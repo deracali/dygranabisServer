@@ -40,7 +40,7 @@ app.use('/api/plan',planRoutes)
 app.use('/api/contact',contactRoutes)
 app.use('/api/address',addressRoutes)
 app.use('/api/payment',PaymentRoutes)
-app.post('/subscribe', subscribe);
+
 
 
 
