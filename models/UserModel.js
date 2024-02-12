@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     },
     amount: {
     type:Number,
+    default: 0,
     },
     isAdmin:{
         type:Boolean,
