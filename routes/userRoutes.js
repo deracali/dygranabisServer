@@ -12,7 +12,7 @@ userRouter.get("/",async(req,res)=>{
  
 })
 
-userRoutes.get('/email/:email', async (req,res)=>{
+userRouter.get('/email/:email', async (req,res)=>{
     const user = await User.findOne({email:req.params.email})
     if(user){
         res.send(user)
