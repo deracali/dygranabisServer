@@ -21,6 +21,7 @@ userRouter.post('/signin',async(req,res)=>{
         _id: user._id,
         name: user.name,
         email: user.email,
+        amount: user.amount,
         isAdmin: user.isAdmin,
         token: generateToken(user),
       });
