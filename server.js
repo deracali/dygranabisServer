@@ -20,18 +20,18 @@ mongoose.connect("mongodb+srv://chideracalistus:economic00@cluster0.aryyobw.mong
     console.log(err.message)
 })
 
-  
-
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use(
-    cors({
-        origin:"http://localhost:5173", 
-    })
-)
+const corsOptions = {
+  origin: 'http://localhost:5173',
+   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 
 
