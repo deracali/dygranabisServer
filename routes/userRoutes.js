@@ -7,14 +7,6 @@ import { generateToken } from '../utils/utils.js'
 const userRouter = express.Router()
 userRouter.use(express.json())
 
-const corsOptions = {
-  origin: 'http://localhost:5173',
-   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-
 userRouter.get("/",async(req,res)=>{
   let limit = req.query.limit
   let data = await User.find().sort({"createdAt":-1}).limit(limit)
