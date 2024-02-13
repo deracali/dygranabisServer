@@ -1,7 +1,7 @@
 import express from 'express'
 import bcrypt from 'bcryptjs'
 import User from '../models/UserModel.js'
-import cors = from 'cors'
+import cors from 'cors'
 import { generateToken } from '../utils/utils.js'
 
 const userRouter = express.Router()
