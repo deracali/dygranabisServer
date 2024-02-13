@@ -7,10 +7,7 @@ import { generateToken } from '../utils/utils.js'
 const userRouter = express.Router()
 userRouter.use(express.json())
 
-const corsOptions = {
-  origin: 'http://localhost:5173',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+
 
 userRouter.get("/",async(req,res)=>{
   let limit = req.query.limit
@@ -28,7 +25,7 @@ userRouter.get('/email/:email', async (req,res)=>{
     }
 })
 
-userRouter.patch("/:id", cors(corsOptions), async(req,res)=>{
+userRouter.patch("/:id", cors(), async(req,res)=>{
     let { id } = req.params
 
     const dataval = await User.findOneAndUpdate({_id:id}, req.body, {new: true}) 
