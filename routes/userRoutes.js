@@ -21,12 +21,10 @@ userRouter.get('/email/:email', async (req,res)=>{
     }
 })
 
-userRouter.put("/:id",async(req,res)=>{
+userRouter.patch("/:id",async(req,res)=>{
     let { id } = req.params
-
-    const dataval = await User.findOneAndUpdate({_id:id},{
-       ...req.body
-    }) 
+    const updates = req.body
+    const dataval = await User.findOneAndUpdate({_id:id},{$set: updates}) 
 
     res.send(dataval)
 })
