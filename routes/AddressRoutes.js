@@ -28,10 +28,8 @@ addressRoutes.post("/",async(req,res)=>{
 
 addressRoutes.patch("/:id",async(req,res)=>{
     let { id } = req.params
-
-    const dataval = await Address.findOneAndUpdate({_id:id},{
-        ...req.body
-    }) 
+    const updates = req.body
+    const dataval = await Address.findOneAndUpdate({_id:id},{$set: updates})
 
     res.send(dataval)
 })
