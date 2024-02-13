@@ -21,6 +21,24 @@ userRouter.get('/email/:email', async (req,res)=>{
     }
 })
 
+userRouter.patch("/:id",async(req,res)=>{
+    let { id } = req.params
+
+    const dataval = await User.findOneAndUpdate({_id:id},{
+        ...req.body
+    }) 
+
+    res.send(dataval)
+})
+
+userRouter.delete("/:id",async(req,res)=>{
+    let { id } = req.params
+
+    const datadel = await User.findOneAndDelete({_id:id}) 
+
+    res.send(datadel)
+})
+
 userRouter.post('/signin',async(req,res)=>{
   const user = await User.findOne({ email: req.body.email });
   
