@@ -25,8 +25,7 @@ userRouter.put("/:id",async(req,res)=>{
     let { id } = req.params
 
     const dataval = await User.findOneAndUpdate({_id:id},{
-       amount: req.body.amount,
-      
+       ...req.body
     }) 
 
     res.send(dataval)
