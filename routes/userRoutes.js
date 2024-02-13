@@ -4,6 +4,7 @@ import User from '../models/UserModel.js'
 import { generateToken } from '../utils/utils.js'
 
 const userRouter = express.Router()
+userRouter.use(express.json())
 
 userRouter.get("/",async(req,res)=>{
   let limit = req.query.limit
