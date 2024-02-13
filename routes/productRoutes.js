@@ -47,7 +47,7 @@ productRoutes.post("/post",async(req,res)=>{
 productRoutes.patch("/:id",async(req,res)=>{
     let { id } = req.params
   
-    const dataval = await Product.findOneAndUpdate({_id:id}req.body, {new: true}) 
+    const dataval = await Product.findOneAndUpdate({_id:id},req.body, {new: true}) 
 
     res.send(dataval)
 })
