@@ -26,7 +26,7 @@ planRoutes.post("/post",async(req,res)=>{
 
 planRoutes.patch("/:id",async(req,res)=>{
     let { id } = req.params
-    const updates = req.body
+   
     const dataval = await Plan.findOneAndUpdate({_id:id}, req.body, {new: true})
 
     res.send(dataval)
