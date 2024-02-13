@@ -7,7 +7,7 @@ import { generateToken } from '../utils/utils.js'
 const userRouter = express.Router()
 userRouter.use(express.json())
 
-var corsOptions = {
+const corsOptions = {
   origin: 'http://localhost:5173',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
