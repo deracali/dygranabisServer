@@ -24,10 +24,8 @@ PaymentRoutes.post("/",async(req,res)=>{
 
 PaymentRoutes.patch("/:id",async(req,res)=>{
     let { id } = req.params
-
-    const dataval = await Payment.findOneAndUpdate({_id:id},{
-        ...req.body
-    }) 
+    const updates = req.body
+    const dataval = await Payment.findOneAndUpdate({_id:id},{$set: updates})
 
     res.send(dataval)
 })
