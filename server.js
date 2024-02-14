@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import productRoutes from './routes/productRoutes.js'
 import userRouter from './routes/userRoutes.js'
+import adminRouter from './routes/AdminRoutes.js'
 import BlogRoutes from './routes/BlogRoutes.js'
 import planRoutes from './routes/planRoutes.js'
 import contactRoutes from './routes/ContactRoutes.js'
@@ -33,6 +34,7 @@ app.use((err, req, res, next) => {
 
 app.use('/api/products',productRoutes)
 app.use('/api/users',userRouter)
+app.use('/api/admin',adminRouter)
 app.use('/api/blog',BlogRoutes)
 app.use('/api/plan',planRoutes)
 app.use('/api/contact',contactRoutes)
