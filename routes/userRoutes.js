@@ -33,7 +33,7 @@ userRouter.patch("/:id", async(req,res)=>{
 
 userRouter.patch("/user/:id", async(req,res)=>{ 
   let { id } = req.params 
-    const updates = amount: req.body.amount 
+    const updates = req.body.amount 
       const dataval = await User.findOneAndUpdate({_id:id}, {$dec: updates})
         res.send(dataval) })
 
