@@ -34,7 +34,7 @@ userRouter.patch("/:id", async(req,res)=>{
 userRouter.patch("/user/:id", async(req,res)=>{ 
   let { id } = req.params 
     const updates = req.body.amount 
-      const dataval = await User.findOneAndUpdate({_id:id}, {$dec: -updates})
+      const dataval = await User.findOneAndUpdate({_id:id}, {$dec: -updates}, {new:true})
         res.send(dataval) })
 
 userRouter.delete("/:id",async(req,res)=>{
